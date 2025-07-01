@@ -13,7 +13,7 @@ Our AI chatbot powered by RAG + Gemma 2B. It answers all the users coding questi
 Using Gemini 1.5 Flash-powered visualizer shows the user a simple visual explanation so the user can understand how the code what code is in the easiest way possible.
 
 4. Generate MCQ Questions
-It generates multiple choice questions made by our smart AI using CodeT5-small model. The user gets a timer that keeps running as long as they get the answers right. If the user answers wrong, it stops generating questions and shows your score and you can try again.
+It generates multiple choice questions made by our smart AI using Llama 3.2-3B-Instruct model. The user gets a timer that keeps running as long as they get the answers right. If the user answers wrong, it stops generating questions and shows your score and you can try again.
 
 5. Debugging Detective Game
 Our website gives the user a code with hidden bugs or missing parts, and the user have to find the mistake. Powered by LLaMA 3.2 3B, this game helps to practice more in coding and there is also a Hint button for a clue the user can use it, if they don't know the answer.
