@@ -1,0 +1,884 @@
+[
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about lists at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nfor row in matrix:\n    for num in row:\n        print(num, end=' ')\n    print()\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nfor i in range(len(matrix)):\n    for j in range(len(matrix)):\n        print(matrix[i][j], end=' ')\n    print()\n</BUGGY_CODE>\n\n<QUESTION>\nThis code tries to print a 3x3 matrix but throws an index error. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. Using same range for the inner loop, should be range(len(matrix[i]))\n2. The matrix is not properly initialized\n3. print() function is used incorrectly\n4. The loops should be reversed\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe inner loop uses range(len(matrix)), assuming all rows have the same length as the entire matrix. It should use range(len(matrix[i])) to get the correct length of each row.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nLists\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about string manipulation at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ntext = 'Python is fun!'\nwords = text.split()\nprint(words[0])\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ntext = 'Python is fun!'\nwords = text.split\nprint(words[0])\n</BUGGY_CODE>\n\n<QUESTION>\nThis code should print 'Python' but has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. Missing parentheses on the split method, should be text.split()\n2. The index should be 1, not 0\n3. The split method needs a parameter\n4. The text variable is not defined correctly\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe code uses text.split without parentheses, which refers to the method object itself, not the result of calling the method. It should be text.split() to call the method.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nString Manipulation\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about string manipulation at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef count_vowels(text):\n    vowels = 'aeiou'\n    count = 0\n    for char in text.lower():\n        if char in vowels:\n            count += 1\n    return count\n\nprint(count_vowels('Hello World'))\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef count_vowels(text):\n    vowels = ['a', 'e', 'i', 'o', 'u']\n    count = 0\n    for char in text:\n        if char in vowels:\n            count += 1\n    return count\n\nprint(count_vowels('Hello World'))\n</BUGGY_CODE>\n\n<QUESTION>\nThis vowel counter function returns 2 for 'Hello World', but the correct answer is 3. Why?\n</QUESTION>\n\n<OPTIONS>\n1. Not counting 'e' as a vowel\n2. The loop is skipping characters\n3. Not checking uppercase vowels (not converting text to lowercase)\n4. The vowels list is missing some vowels\n</OPTIONS>\n\n<ANSWER>\nAnswer: 3\n</ANSWER>\n\n<EXPLANATION>\nThe function doesn't convert the input text to lowercase before checking. Since 'E' in 'Hello' is uppercase, and the vowels list only contains lowercase letters, it's not counted. Adding text.lower() in the loop solves this.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nString Manipulation\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about syntax errors at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ntry:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print('Cannot divide by zero')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ntry:\n    x = 10 / 0\nexcept ZeroDivisionError\n    print('Cannot divide by zero')\n</BUGGY_CODE>\n\n<QUESTION>\nWhat's wrong with this try-except block?\n</QUESTION>\n\n<OPTIONS>\n1. Try statement is missing parentheses\n2. Incorrect exception name\n3. Missing colon after the except statement\n4. Incorrect indentation in the except block\n</OPTIONS>\n\n<ANSWER>\nAnswer: 3\n</ANSWER>\n\n<EXPLANATION>\nThe except statement needs a colon (:) after the exception name, just like if, for, and function definitions.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nSyntax Errors\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about lists at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nscores = [85, 92, 78, 90]\nhighest = max(scores)\nprint(f'The highest score is {highest}')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nscores = [85, 92, 78, 90]\nhighest = scores.max()\nprint(f'The highest score is {highest}')\n</BUGGY_CODE>\n\n<QUESTION>\nThis code should find the highest score but produces an error. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. scores should be a tuple, not a list\n2. Using scores.max() instead of max(scores)\n3. The f-string is formatted incorrectly\n4. The list isn't sorted first\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe code uses scores.max() which doesn't exist for lists in Python. To find the maximum value in a list, use the built-in max(scores) function, not a method.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nLists\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about functions at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef factorial(n):\n    if n == 0 or n == 1:\n        return 1\n    else:\n        return n * factorial(n - 1)\n\nprint(factorial(5))\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef factorial(n):\n    if n == 0 or n == 1:\n        return 1\n    else:\n        return n * factorial(n)\n\nprint(factorial(5))\n</BUGGY_CODE>\n\n<QUESTION>\nThis recursive factorial function causes a maximum recursion depth error. Why?\n</QUESTION>\n\n<OPTIONS>\n1. The base case condition is incorrect\n2. The recursive call doesn't decrement n, causing infinite recursion\n3. Factorial should be calculated using a loop, not recursion\n4. The function should return n * (n-1) directly\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe recursive call is factorial(n) instead of factorial(n - 1), which means n never decreases, causing infinite recursion. Each call should reduce n by 1 to eventually reach the base case.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nFunctions\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about string manipulation at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nmessage = 'Hello World!'\nprint(message[0])\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nmessage = 'Hello World!'\nprint(message(0))\n</BUGGY_CODE>\n\n<QUESTION>\nThis code tries to print the first character of message. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. Using parentheses () instead of square brackets [] for indexing\n2. The index should be 1, not 0\n3. message variable is not properly defined\n4. print function is used incorrectly\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe code uses parentheses message(0) for indexing, but Python uses square brackets for string indexing. It should be message[0].\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nString Manipulation\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about string manipulation at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nmessage = 'hello world'\nprint(message.title())\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nmessage = 'hello world'\nprint(message.capitalize())\n</BUGGY_CODE>\n\n<QUESTION>\nThis code outputs 'Hello world' but we want 'Hello World'. What method should be used?\n</QUESTION>\n\n<OPTIONS>\n1. message.upper()\n2. message.title()\n3. message.proper()\n4. message.Capital()\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe capitalize() method only capitalizes the first character of the string, resulting in 'Hello world'. The title() method capitalizes the first letter of each word, giving 'Hello World'.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nString Manipulation\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about lists at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nitems = ['book', 'pen', 'eraser']\nitems.append('ruler')\nprint(items)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nitems = ['book', 'pen', 'eraser']\nitems.add('ruler')\nprint(items)\n</BUGGY_CODE>\n\n<QUESTION>\nThis code tries to add 'ruler' to the list, but produces an error. Why?\n</QUESTION>\n\n<OPTIONS>\n1. Using .add() method which doesn't exist for lists (should be .append())\n2. The list is defined incorrectly\n3. The method should be items.insert()\n4. The items list is immutable\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe code uses the .add() method, which is for sets, not lists. To add an item to the end of a list, use the .append() method: items.append('ruler').\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nLists\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about functions at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef get_highest_score(scores):\n    if not scores:\n        return 0\n    return max(scores)\n\nstudent_scores = [85, 92, 78, 90]\nprint(get_highest_score(student_scores))\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef get_highest_score(scores):\n    if not scores:\n        return 0\n    return max(score)\n\nstudent_scores = [85, 92, 78, 90]\nprint(get_highest_score(student_scores))\n</BUGGY_CODE>\n\n<QUESTION>\nThis function should return the highest score but has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. The max() function is used incorrectly\n2. Using 'score' (singular) instead of 'scores' (plural) in the return statement\n3. The if statement is unnecessary\n4. The function name doesn't match the call\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe function tries to return max(score), but 'score' is not defined. It should be 'scores', which is the parameter passed to the function.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nFunctions\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about syntax errors at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nif x > 10:\n    print('Greater than 10')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nif x > 10\n    print('Greater than 10')\n</BUGGY_CODE>\n\n<QUESTION>\nThis code has a syntax error. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. Missing parentheses around the condition\n2. Missing colon after the if statement\n3. Incorrect indentation\n4. Should use double quotes instead of single quotes\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nAn if statement in Python needs a colon (:) at the end of the condition line.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nSyntax Errors\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about conditional logic at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ntemperature = 30\nif temperature > 25:\n    print('It\\'s hot today!')\nelse:\n    print('It\\'s not hot today.')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ntemperature = 30\nif temperature > 25\n    print('It\\'s hot today!')\nelse:\n    print('It\\'s not hot today.')\n</BUGGY_CODE>\n\n<QUESTION>\nThis weather condition checker has a bug. Can you find it?\n</QUESTION>\n\n<OPTIONS>\n1. Missing colon after if condition\n2. Wrong comparison operator\n3. Incorrect indentation\n4. Missing quotes around the string\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe if statement is missing a colon (:) after the condition. In Python, all conditional statements must end with a colon.\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nConditional Logic\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about lists at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nfruits = ['apple', 'banana', 'cherry']\nprint(fruits[0])\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nfruits = ['apple', 'banana', 'cherry']\nprint(fruits(0))\n</BUGGY_CODE>\n\n<QUESTION>\nThis code tries to print the first fruit. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. Using parentheses () instead of square brackets [] for indexing\n2. The index should be 1, not 0\n3. fruit list is not properly defined\n4. print function is missing quotes\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe code uses parentheses fruits(0) for indexing, but Python uses square brackets for list indexing. It should be fruits[0].\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nLists\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about string manipulation at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef count_vowels(text):\n    vowels = 'aeiou'\n    count = 0\n    for char in text.lower():\n        if char in vowels:\n            count += 1\n    return count\n\nprint(count_vowels('Hello World'))\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef count_vowels(text):\n    vowels = ['a', 'e', 'i', 'o', 'u']\n    count = 0\n    for char in text:\n        if char in vowels:\n            count += 1\n    return count\n\nprint(count_vowels('Hello World'))\n</BUGGY_CODE>\n\n<QUESTION>\nThis vowel counter function returns 2 for 'Hello World', but the correct answer is 3. Why?\n</QUESTION>\n\n<OPTIONS>\n1. Not counting 'e' as a vowel\n2. The loop is skipping characters\n3. Not checking uppercase vowels (not converting text to lowercase)\n4. The vowels list is missing some vowels\n</OPTIONS>\n\n<ANSWER>\nAnswer: 3\n</ANSWER>\n\n<EXPLANATION>\nThe function doesn't convert the input text to lowercase before checking. Since 'E' in 'Hello' is uppercase, and the vowels list only contains lowercase letters, it's not counted. Adding text.lower() in the loop solves this.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nString Manipulation\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about dictionaries at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nstudent = {'name': 'Alex', 'age': 13, 'grade': 7}\nprint(student['name'])\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nstudent = {'name': 'Alex', 'age': 13, 'grade': 7}\nprint(student[name])\n</BUGGY_CODE>\n\n<QUESTION>\nThis code should print the student's name but has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. student should be a list, not a dictionary\n2. Missing quotes around the key 'name'\n3. The print statement format is wrong\n4. The dictionary is missing a comma\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe code tries to access student[name], but 'name' is not a variable. In dictionaries, string keys need to be in quotes: student['name'].\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nDictionaries\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about functions at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef greet(name):\n    return f'Hello, {name}!'\n\nmessage = greet('Alex')\nprint(message)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef greet(name):\n    return 'Hello, {name}!'\n\nmessage = greet('Alex')\nprint(message)\n</BUGGY_CODE>\n\n<QUESTION>\nThis greeting function doesn't insert the name. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. The return statement should use print() instead\n2. Missing the letter 'f' before the string to make it an f-string\n3. name variable should be in quotes\n4. The function call is incorrect\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe string 'Hello, {name}!' needs to be an f-string to substitute the variable. It should be f'Hello, {name}!' with an 'f' prefix.\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nFunctions\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about string manipulation at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ntext = 'Python is fun!'\nwords = text.split()\nprint(words[0])\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ntext = 'Python is fun!'\nwords = text.split\nprint(words[0])\n</BUGGY_CODE>\n\n<QUESTION>\nThis code should print 'Python' but has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. Missing parentheses on the split method, should be text.split()\n2. The index should be 1, not 0\n3. The split method needs a parameter\n4. The text variable is not defined correctly\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe code uses text.split without parentheses, which refers to the method object itself, not the result of calling the method. It should be text.split() to call the method.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nString Manipulation\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about string manipulation at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef remove_spaces(text):\n    return text.strip()\n\nmessage = '   Hello world!   '\nprint(f'[{remove_spaces(message)}]')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef remove_spaces(text):\n    return text.replace(' ', '')\n\nmessage = '   Hello world!   '\nprint(f'[{remove_spaces(message)}]')\n</BUGGY_CODE>\n\n<QUESTION>\nThis function should remove only leading and trailing spaces, but it removes all spaces. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. Using replace(' ', '') which removes all spaces instead of strip() which removes only leading/trailing spaces\n2. The f-string format is incorrect\n3. The message variable has extra spaces\n4. The function name is misleading\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe function uses replace(' ', '') which removes ALL spaces from the string, including those between words. To remove only leading and trailing spaces, use the strip() method instead.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nString Manipulation\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about conditional logic at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nfruit = 'apple'\nif fruit == 'apple':\n    print('It\\'s an apple')\nelif fruit == 'orange':\n    print('It\\'s an orange')\nelse:\n    print('It\\'s neither an apple nor an orange')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nfruit = 'apple'\nif fruit = 'apple':\n    print('It\\'s an apple')\nelif fruit = 'orange':\n    print('It\\'s an orange')\nelse:\n    print('It\\'s neither an apple nor an orange')\n</BUGGY_CODE>\n\n<QUESTION>\nThis fruit identifier has a logical error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. Using assignment operator (=) instead of equality operator (==) in conditions\n2. Missing colons after conditional statements\n3. fruit variable should be in a list\n4. Incorrect indentation in the code blocks\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe code uses the assignment operator (=) instead of the equality comparison operator (==) in the if and elif conditions. The assignment operator assigns a value, while == checks for equality.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nConditional Logic\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about loops at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef find_max(numbers):\n    if not numbers:\n        return None\n    max_num = numbers[0]\n    for num in numbers[1:]:\n        if num > max_num:\n            max_num = num\n    return max_num\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef find_max(numbers):\n    if not numbers:\n        return None\n    max_num = 0\n    for num in numbers:\n        if num > max_num:\n            max_num = num\n    return max_num\n</BUGGY_CODE>\n\n<QUESTION>\nThis function should find the maximum value in a list, but it doesn't work correctly with negative numbers. Why?\n</QUESTION>\n\n<OPTIONS>\n1. The loop should start from index 1, not 0\n2. Initializing max_num to 0 instead of the first element in the list\n3. Missing a condition to handle negative numbers\n4. The return statement is incorrect\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe function initializes max_num to 0, which will be wrong if all numbers in the list are negative. It should initialize max_num to the first element of the list (numbers[0]) to handle all cases correctly.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nLoops\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about lists at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nscores = [85, 92, 78, 90]\nhighest = max(scores)\nprint(f'The highest score is {highest}')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nscores = [85, 92, 78, 90]\nhighest = scores.max()\nprint(f'The highest score is {highest}')\n</BUGGY_CODE>\n\n<QUESTION>\nThis code should find the highest score but produces an error. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. scores should be a tuple, not a list\n2. Using scores.max() instead of max(scores)\n3. The f-string is formatted incorrectly\n4. The list isn't sorted first\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe code uses scores.max() which doesn't exist for lists in Python. To find the maximum value in a list, use the built-in max(scores) function, not a method.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nLists\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about dictionaries at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nstudents = {'Alice': {'math': 90, 'science': 85}, 'Bob': {'math': 78, 'science': 92}}\nprint(students['Alice']['math'])\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nstudents = {'Alice': {'math': 90, 'science': 85}, 'Bob': {'math': 78, 'science': 92}}\nprint(students['Alice.math'])\n</BUGGY_CODE>\n\n<QUESTION>\nThis code tries to print Alice's math score, but has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. Incorrect nesting of dictionaries\n2. Trying to use dot notation within a key, should be students['Alice']['math']\n3. Alice and math should be variables, not strings\n4. The print statement format is wrong\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe code tries to use dot notation syntax inside a string key as 'Alice.math'. For nested dictionaries, each level requires its own square brackets: students['Alice']['math'].\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nDictionaries\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about conditional logic at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\npassword = 'secret123'\nif len(password) >= 8 and any(c.isdigit() for c in password):\n    print('Password is strong')\nelse:\n    print('Password is weak')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\npassword = 'secret123'\nif len(password) >= 8 or any(c.isdigit() for c in password):\n    print('Password is strong')\nelse:\n    print('Password is weak')\n</BUGGY_CODE>\n\n<QUESTION>\nThe password strength checker has a logical flaw. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. The password variable is not defined correctly\n2. Using logical OR (or) instead of logical AND (and)\n3. The length check should use > not >=\n4. The any() function is used incorrectly\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe code uses 'or' which means a password is considered strong if EITHER it's at least 8 characters OR it contains a digit. It should use 'and' to require BOTH conditions for a strong password.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nConditional Logic\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about dictionaries at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nscores = {'math': 90, 'science': 85, 'history': 78}\nprint(scores.get('art', 'Not found'))\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nscores = {'math': 90, 'science': 85, 'history': 78}\nprint(scores['art'])\n</BUGGY_CODE>\n\n<QUESTION>\nThis code tries to print the 'art' score, but crashes. What's a better way to handle this?\n</QUESTION>\n\n<OPTIONS>\n1. Check if 'art' exists using 'art' in scores first\n2. Use scores.get('art', 'Not found') to provide a default value\n3. Use a try-except block\n4. Initialize 'art' with a zero value\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nTrying to access a non-existent key with square brackets (scores['art']) raises a KeyError. Using the .get() method with a default value (scores.get('art', 'Not found')) is a safer way to handle this.\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nDictionaries\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about conditional logic at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nx = 5\ny = 10\nif x > 0 and y > 0:\n    print('Both values are positive')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nx = 5\ny = 10\nif x > 0 && y > 0:\n    print('Both values are positive')\n</BUGGY_CODE>\n\n<QUESTION>\nFind the error in this logical condition:\n</QUESTION>\n\n<OPTIONS>\n1. x and y should be in quotes\n2. Using && instead of 'and' for logical AND\n3. Missing an else statement\n4. The comparison operators are reversed\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nIn Python, we use the keyword 'and' for logical AND operations, not && (which is used in languages like JavaScript and C++).\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nConditional Logic\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about loops at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ncount = 0\nwhile count < 5:\n    print(count)\n    count += 1\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ncount = 0\nwhile count < 5:\n    print(count)\n    count = count\n</BUGGY_CODE>\n\n<QUESTION>\nThis while loop isn't stopping. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. The condition should be count <= 5\n2. count is not being incremented\n3. Missing a break statement\n4. print(count) is causing an infinite loop\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe loop variable 'count' isn't being incremented. It's just being assigned to itself (count = count), so its value never changes and the loop condition (count < 5) is always true, causing an infinite loop.\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nLoops\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about lists at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nfor row in matrix:\n    for num in row:\n        print(num, end=' ')\n    print()\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nfor i in range(len(matrix)):\n    for j in range(len(matrix)):\n        print(matrix[i][j], end=' ')\n    print()\n</BUGGY_CODE>\n\n<QUESTION>\nThis code tries to print a 3x3 matrix but throws an index error. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. Using same range for the inner loop, should be range(len(matrix[i]))\n2. The matrix is not properly initialized\n3. print() function is used incorrectly\n4. The loops should be reversed\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe inner loop uses range(len(matrix)), assuming all rows have the same length as the entire matrix. It should use range(len(matrix[i])) to get the correct length of each row.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nLists\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about conditional logic at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nscore = 85\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'D'\nprint('Your grade is:', grade)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nscore = 85\nif score >= 90:\n    grade = 'A'\nif score >= 80:\n    grade = 'B'\nif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'D'\nprint('Your grade is:', grade)\n</BUGGY_CODE>\n\n<QUESTION>\nThis grading program doesn't give the expected grade. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. The score variable is incorrect\n2. Using 'if' statements instead of 'elif' for the second and third conditions\n3. Missing colons after conditionals\n4. Incorrect string formatting in the print statement\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe code uses multiple 'if' statements instead of 'elif'. With separate 'if' statements, all conditions are checked independently, and since 85 >= 70 and 85 >= 80, the grade will incorrectly be set to 'C' at the end.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nConditional Logic\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about loops at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nnumbers = [1, 2, 3, 4, 5]\nsum_even = 0\nfor num in numbers:\n    if num % 2 == 0:\n        sum_even += num\nprint('Sum of even numbers:', sum_even)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nnumbers = [1, 2, 3, 4, 5]\nsum_even = 0\nfor num in numbers:\n    if num % 2 = 0:\n        sum_even += num\nprint('Sum of even numbers:', sum_even)\n</BUGGY_CODE>\n\n<QUESTION>\nThis code should sum up the even numbers, but it has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. Using assignment operator (=) instead of equality check (==) in if condition\n2. The modulo operation % is used incorrectly\n3. sum_even should be initialized to 1\n4. The for loop should use range() instead\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe if condition uses the assignment operator (=) instead of the equality operator (==). It should be 'if num % 2 == 0:' to check if a number is even.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nLoops\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about dictionaries at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef get_letter_count(text):\n    letter_count = {}\n    for char in text:\n        if char.isalpha():\n            char = char.lower()\n            if char in letter_count:\n                letter_count[char] += 1\n            else:\n                letter_count[char] = 1\n    return letter_count\n\nprint(get_letter_count('Hello World!'))\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef get_letter_count(text):\n    letter_count = {}\n    for char in text:\n        if char.isalpha():\n            char = char.lower()\n            letter_count[char] += 1\n    return letter_count\n\nprint(get_letter_count('Hello World!'))\n</BUGGY_CODE>\n\n<QUESTION>\nThis function counts letters in a text but raises a KeyError. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. The loop is incorrect\n2. Missing initialization of new keys before incrementing\n3. The isalpha() check is unnecessary\n4. The function should return a list, not a dictionary\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe function tries to increment letter_count[char] without first checking if the key exists. When a new character is encountered, the code needs to either check if the key exists (using 'if char in letter_count') or use the .get() method with a default value.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nDictionaries\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about dictionaries at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nstudent = {'name': 'Alex', 'age': 13, 'grade': 7}\nprint(student['name'])\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nstudent = {'name': 'Alex', 'age': 13, 'grade': 7}\nprint(student[name])\n</BUGGY_CODE>\n\n<QUESTION>\nThis code should print the student's name but has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. student should be a list, not a dictionary\n2. Missing quotes around the key 'name'\n3. The print statement format is wrong\n4. The dictionary is missing a comma\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe code tries to access student[name], but 'name' is not a variable. In dictionaries, string keys need to be in quotes: student['name'].\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nDictionaries\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about syntax errors at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nfor i in range(5):\n    print(i)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nfor i in range(5);\n    print(i)\n</BUGGY_CODE>\n\n<QUESTION>\nWhy doesn't this loop work?\n</QUESTION>\n\n<OPTIONS>\n1. range(5) is invalid\n2. Using semicolon (;) instead of colon (:)\n3. Missing parentheses in print\n4. i is not defined\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nIn Python, we use colons (:) after for statements, not semicolons (;) like in some other programming languages.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nSyntax Errors\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about functions at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef double(num):\n    return num * 2\n\nresult = double(5)\nprint(result)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef double(num):\n    num * 2\n\nresult = double(5)\nprint(result)\n</BUGGY_CODE>\n\n<QUESTION>\nThis doubling function returns None instead of 10. Why?\n</QUESTION>\n\n<OPTIONS>\n1. The function name is incorrect\n2. Missing the return statement in the function\n3. The calculation should be num + num\n4. The print statement is wrong\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe function is missing a return statement. It calculates num * 2 but doesn't return the result, so the function returns None by default.\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nFunctions\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about loops at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nfruits = ['apple', 'banana', 'cherry']\nfor fruit in fruits:\n    print(fruit)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nfruits = ['apple', 'banana', 'cherry']\nfor i in range(fruits):\n    print(fruits[i])\n</BUGGY_CODE>\n\n<QUESTION>\nThis loop is trying to print each fruit, but it has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. fruits should be a tuple not a list\n2. Using range(fruits) instead of range(len(fruits))\n3. Should use enumerate instead of range\n4. Missing parentheses in the print statement\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe code is trying to use range(fruits), but range() requires a number, not a list. To iterate through indices, it should be range(len(fruits)), but the simpler way is to iterate directly: for fruit in fruits.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nLoops\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about lists at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nfruits = ['apple', 'banana', 'cherry']\nprint(fruits[0])\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nfruits = ['apple', 'banana', 'cherry']\nprint(fruits(0))\n</BUGGY_CODE>\n\n<QUESTION>\nThis code tries to print the first fruit. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. Using parentheses () instead of square brackets [] for indexing\n2. The index should be 1, not 0\n3. fruit list is not properly defined\n4. print function is missing quotes\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe code uses parentheses fruits(0) for indexing, but Python uses square brackets for list indexing. It should be fruits[0].\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nLists\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about syntax errors at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nage = 12\nprint(\"I am\", age, \"years old\")\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nage = 12\nprint(\"I am\" age \"years old\")\n</BUGGY_CODE>\n\n<QUESTION>\nFind the syntax error in this code:\n</QUESTION>\n\n<OPTIONS>\n1. Missing quotation marks\n2. Missing commas between items in print statement\n3. Wrong variable name\n4. Missing parentheses\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nWhen printing multiple items, they need to be separated by commas. The correct code is: print(\"I am\", age, \"years old\")\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nSyntax Errors\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about conditional logic at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nscore = 85\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'D'\nprint('Your grade is:', grade)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nscore = 85\nif score >= 90:\n    grade = 'A'\nif score >= 80:\n    grade = 'B'\nif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'D'\nprint('Your grade is:', grade)\n</BUGGY_CODE>\n\n<QUESTION>\nThis grading program doesn't give the expected grade. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. The score variable is incorrect\n2. Using 'if' statements instead of 'elif' for the second and third conditions\n3. Missing colons after conditionals\n4. Incorrect string formatting in the print statement\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe code uses multiple 'if' statements instead of 'elif'. With separate 'if' statements, all conditions are checked independently, and since 85 >= 70 and 85 >= 80, the grade will incorrectly be set to 'C' at the end.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nConditional Logic\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about conditional logic at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ntemperature = 30\nif temperature > 25:\n    print('It\\'s hot today!')\nelse:\n    print('It\\'s not hot today.')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ntemperature = 30\nif temperature > 25\n    print('It\\'s hot today!')\nelse:\n    print('It\\'s not hot today.')\n</BUGGY_CODE>\n\n<QUESTION>\nThis weather condition checker has a bug. Can you find it?\n</QUESTION>\n\n<OPTIONS>\n1. Missing colon after if condition\n2. Wrong comparison operator\n3. Incorrect indentation\n4. Missing quotes around the string\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe if statement is missing a colon (:) after the condition. In Python, all conditional statements must end with a colon.\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nConditional Logic\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about loops at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nnumbers = [1, 2, 3, 4, 5]\nsum_even = 0\nfor num in numbers:\n    if num % 2 == 0:\n        sum_even += num\nprint('Sum of even numbers:', sum_even)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nnumbers = [1, 2, 3, 4, 5]\nsum_even = 0\nfor num in numbers:\n    if num % 2 = 0:\n        sum_even += num\nprint('Sum of even numbers:', sum_even)\n</BUGGY_CODE>\n\n<QUESTION>\nThis code should sum up the even numbers, but it has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. Using assignment operator (=) instead of equality check (==) in if condition\n2. The modulo operation % is used incorrectly\n3. sum_even should be initialized to 1\n4. The for loop should use range() instead\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe if condition uses the assignment operator (=) instead of the equality operator (==). It should be 'if num % 2 == 0:' to check if a number is even.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nLoops\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about dictionaries at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nstudents = {'Alice': {'math': 90, 'science': 85}, 'Bob': {'math': 78, 'science': 92}}\nprint(students['Alice']['math'])\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nstudents = {'Alice': {'math': 90, 'science': 85}, 'Bob': {'math': 78, 'science': 92}}\nprint(students['Alice.math'])\n</BUGGY_CODE>\n\n<QUESTION>\nThis code tries to print Alice's math score, but has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. Incorrect nesting of dictionaries\n2. Trying to use dot notation within a key, should be students['Alice']['math']\n3. Alice and math should be variables, not strings\n4. The print statement format is wrong\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe code tries to use dot notation syntax inside a string key as 'Alice.math'. For nested dictionaries, each level requires its own square brackets: students['Alice']['math'].\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nDictionaries\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about lists at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nnumbers = [10, 20, 30, 40, 50]\nprint(numbers[1:4])\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nnumbers = [10, 20, 30, 40, 50]\nprint(numbers[1:5:2])\n</BUGGY_CODE>\n\n<QUESTION>\nThis code should print [20, 30, 40], but prints [20, 40] instead. Why?\n</QUESTION>\n\n<OPTIONS>\n1. The start index is wrong\n2. The end index is wrong\n3. Using a step of 2 in the slice, which skips every other item\n4. The list is defined incorrectly\n</OPTIONS>\n\n<ANSWER>\nAnswer: 3\n</ANSWER>\n\n<EXPLANATION>\nThe slice numbers[1:5:2] includes a step of 2, which means it takes every second item starting from index 1. So it returns [20, 40] instead of [20, 30, 40]. The correct slice should be numbers[1:4] or numbers[1:4:1].\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nLists\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about loops at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nfruits = ['apple', 'banana', 'cherry']\nfor fruit in fruits:\n    print(fruit)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nfruits = ['apple', 'banana', 'cherry']\nfor i in range(fruits):\n    print(fruits[i])\n</BUGGY_CODE>\n\n<QUESTION>\nThis loop is trying to print each fruit, but it has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. fruits should be a tuple not a list\n2. Using range(fruits) instead of range(len(fruits))\n3. Should use enumerate instead of range\n4. Missing parentheses in the print statement\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe code is trying to use range(fruits), but range() requires a number, not a list. To iterate through indices, it should be range(len(fruits)), but the simpler way is to iterate directly: for fruit in fruits.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nLoops\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about dictionaries at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ninventory = {'apple': 10, 'banana': 15, 'orange': 8}\ninventory['banana'] += 5\nprint(inventory)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ninventory = {'apple': 10, 'banana': 15, 'orange': 8}\ninventory.banana += 5\nprint(inventory)\n</BUGGY_CODE>\n\n<QUESTION>\nThis code should add 5 to the banana count, but has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. Using dot notation (inventory.banana) instead of square brackets (inventory['banana'])\n2. The increment operation is incorrect\n3. Banana should be in quotes in the dictionary\n4. The dictionary is immutable\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe code uses dot notation (inventory.banana) which is for object attributes, not dictionary keys. Dictionary keys are accessed using square brackets: inventory['banana'].\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nDictionaries\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about dictionaries at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nstudent = {'name': 'Alex', 'scores': [85, 90, 78]}\nprint(student['scores'][1])\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nstudent = {'name': 'Alex', 'scores': [85, 90, 78]}\nprint(student['scores[1]'])\n</BUGGY_CODE>\n\n<QUESTION>\nThis code should print the second score (90), but has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. The index should be 2, not 1\n2. Incorrect nesting of square brackets, should be student['scores'][1]\n3. Scores should be a tuple, not a list\n4. The dictionary values cannot be lists\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe code incorrectly attempts to index within the key string, using student['scores[1]']. To access a nested structure, first access the dictionary value, then the list element: student['scores'][1].\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nDictionaries\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about conditional logic at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nage = 14\nif age >= 13:\n    print('You can play teen games')\nelse:\n    print('You can only play kids games')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nage = 14\nif age >= 13:\n    print('You can play teen games')\nelese:\n    print('You can only play kids games')\n</BUGGY_CODE>\n\n<QUESTION>\nThis age checker isn't working. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. Wrong comparison in the if statement\n2. Misspelled 'else' as 'elese'\n3. Missing colon after else\n4. Wrong indentation in print statement\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe 'else' keyword is misspelled as 'elese'. Python keywords must be spelled correctly.\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nConditional Logic\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about syntax errors at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef calculate(x, y):\n    return x * y\n\nresult = calculate(5, 3)\nprint(result)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef calculate(x, y):\n    return x * y\n\nresult = calculate(5, 3\nprint(result)\n</BUGGY_CODE>\n\n<QUESTION>\nFind the syntax error in this function code:\n</QUESTION>\n\n<OPTIONS>\n1. Missing parenthesis in the function call\n2. Wrong indentation in the function\n3. Missing colon after function definition\n4. Return statement is incorrect\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe function call calculate(5, 3 is missing the closing parenthesis. It should be calculate(5, 3).\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nSyntax Errors\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about syntax errors at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nname = \"Alex\"\nprint(name)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nname = \"Alex\"\nprint(nome)\n</BUGGY_CODE>\n\n<QUESTION>\nWhy does this code give an error?\n</QUESTION>\n\n<OPTIONS>\n1. print is misspelled\n2. Variable name is misspelled in the print statement\n3. Missing quotation marks\n4. The string is too short\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe variable name is 'name', but the code tries to print 'nome', which doesn't exist.\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nSyntax Errors\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about loops at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nfor i in range(5):\n    print(i)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nfor i in range(5)\n    print(i)\n</BUGGY_CODE>\n\n<QUESTION>\nWhy doesn't this loop print the numbers from 0 to 4?\n</QUESTION>\n\n<OPTIONS>\n1. range(5) should be range(0, 5)\n2. Missing colon after the for statement\n3. The indentation is incorrect\n4. i should be initialized before the loop\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe for loop is missing a colon (:) after range(5). All loop statements in Python must end with a colon.\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nLoops\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about functions at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef calculate_area(length, width):\n    return length * width\n\narea = calculate_area(4, 5)\nprint(f'The area is {area} square units')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef calculate_area(length, width):\n    return length * width\n\narea = calculate_area(4)\nprint(f'The area is {area} square units')\n</BUGGY_CODE>\n\n<QUESTION>\nThis area calculator produces an error. What's the problem?\n</QUESTION>\n\n<OPTIONS>\n1. The formula for calculating area is incorrect\n2. The function call is missing the second required argument\n3. The return statement is incorrect\n4. The print statement format is wrong\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe function calculate_area() requires two arguments (length and width), but the call only provides one argument (4). The second argument is missing.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nFunctions\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about dictionaries at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ninventory = {'apple': 10, 'banana': 15, 'orange': 8}\ninventory['banana'] += 5\nprint(inventory)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ninventory = {'apple': 10, 'banana': 15, 'orange': 8}\ninventory.banana += 5\nprint(inventory)\n</BUGGY_CODE>\n\n<QUESTION>\nThis code should add 5 to the banana count, but has an error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. Using dot notation (inventory.banana) instead of square brackets (inventory['banana'])\n2. The increment operation is incorrect\n3. Banana should be in quotes in the dictionary\n4. The dictionary is immutable\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe code uses dot notation (inventory.banana) which is for object attributes, not dictionary keys. Dictionary keys are accessed using square brackets: inventory['banana'].\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nDictionaries\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about syntax errors at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nprint(\"Hello, world!\")\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nprint(\"Hello, world!\"\n</BUGGY_CODE>\n\n<QUESTION>\nWhat's wrong with this code?\n</QUESTION>\n\n<OPTIONS>\n1. Missing closing parenthesis\n2. Missing quotation mark\n3. Wrong indentation\n4. Misspelled print function\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe code is missing a closing parenthesis. The correct code should be: print(\"Hello, world!\")\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nSyntax Errors\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about conditional logic at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nfruit = 'apple'\nif fruit == 'apple':\n    print('It\\'s an apple')\nelif fruit == 'orange':\n    print('It\\'s an orange')\nelse:\n    print('It\\'s neither an apple nor an orange')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nfruit = 'apple'\nif fruit = 'apple':\n    print('It\\'s an apple')\nelif fruit = 'orange':\n    print('It\\'s an orange')\nelse:\n    print('It\\'s neither an apple nor an orange')\n</BUGGY_CODE>\n\n<QUESTION>\nThis fruit identifier has a logical error. What is it?\n</QUESTION>\n\n<OPTIONS>\n1. Using assignment operator (=) instead of equality operator (==) in conditions\n2. Missing colons after conditional statements\n3. fruit variable should be in a list\n4. Incorrect indentation in the code blocks\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe code uses the assignment operator (=) instead of the equality comparison operator (==) in the if and elif conditions. The assignment operator assigns a value, while == checks for equality.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nConditional Logic\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about functions at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef greet(name):\n    return f'Hello, {name}!'\n\nmessage = greet('Alex')\nprint(message)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef greet(name):\n    return 'Hello, {name}!'\n\nmessage = greet('Alex')\nprint(message)\n</BUGGY_CODE>\n\n<QUESTION>\nThis greeting function doesn't insert the name. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. The return statement should use print() instead\n2. Missing the letter 'f' before the string to make it an f-string\n3. name variable should be in quotes\n4. The function call is incorrect\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe string 'Hello, {name}!' needs to be an f-string to substitute the variable. It should be f'Hello, {name}!' with an 'f' prefix.\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nFunctions\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about functions at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef average(numbers):\n    if not numbers:\n        return 0\n    return sum(numbers) / len(numbers)\n\nnums = [10, 15, 20, 25, 30]\nprint(f'Average: {average(nums)}')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef average(numbers):\n    return sum(numbers) / len(numbers)\n\nnums = []\nprint(f'Average: {average(nums)}')\n</BUGGY_CODE>\n\n<QUESTION>\nThis average calculator crashes with an empty list. What's missing?\n</QUESTION>\n\n<OPTIONS>\n1. The function name should be mean() not average()\n2. Missing a check for an empty list before calculating\n3. The division should use // instead of /\n4. The sum() function is used incorrectly\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe function doesn't check if the input list is empty before calculating. When an empty list is passed, len(numbers) is 0, causing a division by zero error. It should check if the list is empty and return a default value.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nFunctions\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about functions at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef calculate_area(length, width):\n    return length * width\n\narea = calculate_area(4, 5)\nprint(f'The area is {area} square units')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef calculate_area(length, width):\n    return length * width\n\narea = calculate_area(4)\nprint(f'The area is {area} square units')\n</BUGGY_CODE>\n\n<QUESTION>\nThis area calculator produces an error. What's the problem?\n</QUESTION>\n\n<OPTIONS>\n1. The formula for calculating area is incorrect\n2. The function call is missing the second required argument\n3. The return statement is incorrect\n4. The print statement format is wrong\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe function calculate_area() requires two arguments (length and width), but the call only provides one argument (4). The second argument is missing.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nFunctions\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about syntax errors at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef calculate(x, y):\n    return x * y\n\nresult = calculate(5, 3)\nprint(result)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef calculate(x, y):\n    return x * y\n\nresult = calculate(5, 3\nprint(result)\n</BUGGY_CODE>\n\n<QUESTION>\nFind the syntax error in this function code:\n</QUESTION>\n\n<OPTIONS>\n1. Missing parenthesis in the function call\n2. Wrong indentation in the function\n3. Missing colon after function definition\n4. Return statement is incorrect\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe function call calculate(5, 3 is missing the closing parenthesis. It should be calculate(5, 3).\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nSyntax Errors\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about string manipulation at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nname = 'Alex'\ngreeting = 'Hello, ' + name + '!'\nprint(greeting)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nname = 'Alex'\ngreeting = 'Hello, ' + Name + '!'\nprint(greeting)\n</BUGGY_CODE>\n\n<QUESTION>\nThis greeting code produces an error. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. The variable 'Name' doesn't exist (should be lowercase 'name')\n2. Missing quotes around the variable\n3. The + operator can't be used with strings\n4. The print statement is incorrect\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe code uses 'Name' (with capital N) in the concatenation, but the variable was defined as 'name' (lowercase). Python is case-sensitive, so these are different variables.\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nString Manipulation\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about syntax errors at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nif x > 10:\n    print('Greater than 10')\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nif x > 10\n    print('Greater than 10')\n</BUGGY_CODE>\n\n<QUESTION>\nThis code has a syntax error. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. Missing parentheses around the condition\n2. Missing colon after the if statement\n3. Incorrect indentation\n4. Should use double quotes instead of single quotes\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nAn if statement in Python needs a colon (:) at the end of the condition line.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nSyntax Errors\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about loops at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nfor i in range(5):\n    print(i)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nfor i in range(5)\n    print(i)\n</BUGGY_CODE>\n\n<QUESTION>\nWhy doesn't this loop print the numbers from 0 to 4?\n</QUESTION>\n\n<OPTIONS>\n1. range(5) should be range(0, 5)\n2. Missing colon after the for statement\n3. The indentation is incorrect\n4. i should be initialized before the loop\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe for loop is missing a colon (:) after range(5). All loop statements in Python must end with a colon.\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nLoops\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about lists at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef remove_duplicates(items):\n    return list(set(items))\n\nnumbers = [1, 2, 2, 3, 4, 4, 5]\nprint(remove_duplicates(numbers))\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef remove_duplicates(items):\n    result = []\n    for item in items:\n        if item not in result:\n            result.append(item)\n    return result\n\nnumbers = [1, 2, 2, 3, 4, 4, 5]\nprint(remove_duplicates(numbers))\n</BUGGY_CODE>\n\n<QUESTION>\nThis function removes duplicates from a list. What's a more efficient way to write it?\n</QUESTION>\n\n<OPTIONS>\n1. Using a list comprehension\n2. Converting to a set and back to a list: list(set(items))\n3. Using the built-in remove_duplicates() function\n4. Sorting the list first\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nWhile the function works correctly, it's inefficient for large lists. A more efficient approach is to convert the list to a set (which automatically removes duplicates) and then back to a list: return list(set(items)).\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nLists\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about string manipulation at easy level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\nmessage = 'Hello World!'\nprint(message[0])\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\nmessage = 'Hello World!'\nprint(message(0))\n</BUGGY_CODE>\n\n<QUESTION>\nThis code tries to print the first character of message. What's wrong?\n</QUESTION>\n\n<OPTIONS>\n1. Using parentheses () instead of square brackets [] for indexing\n2. The index should be 1, not 0\n3. message variable is not properly defined\n4. print function is used incorrectly\n</OPTIONS>\n\n<ANSWER>\nAnswer: 1\n</ANSWER>\n\n<EXPLANATION>\nThe code uses parentheses message(0) for indexing, but Python uses square brackets for string indexing. It should be message[0].\n</EXPLANATION>\n\n<DIFFICULTY>\nEasy\n</DIFFICULTY>\n\n<CATEGORY>\nString Manipulation\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about functions at hard level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ndef factorial(n):\n    if n == 0 or n == 1:\n        return 1\n    else:\n        return n * factorial(n - 1)\n\nprint(factorial(5))\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ndef factorial(n):\n    if n == 0 or n == 1:\n        return 1\n    else:\n        return n * factorial(n)\n\nprint(factorial(5))\n</BUGGY_CODE>\n\n<QUESTION>\nThis recursive factorial function causes a maximum recursion depth error. Why?\n</QUESTION>\n\n<OPTIONS>\n1. The base case condition is incorrect\n2. The recursive call doesn't decrement n, causing infinite recursion\n3. Factorial should be calculated using a loop, not recursion\n4. The function should return n * (n-1) directly\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe recursive call is factorial(n) instead of factorial(n - 1), which means n never decreases, causing infinite recursion. Each call should reduce n by 1 to eventually reach the base case.\n</EXPLANATION>\n\n<DIFFICULTY>\nHard\n</DIFFICULTY>\n\n<CATEGORY>\nFunctions\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ],
+  [
+    {
+      "content": "You are an AI tutor that creates debugging challenges to teach Python programming concepts to children aged 12-15. Your questions should be clear, engaging, and age-appropriate.",
+      "role": "system"
+    },
+    {
+      "content": "Generate a Python debugging challenge for kids about loops at medium level.",
+      "role": "user"
+    },
+    {
+      "content": "<ORIGINAL_CODE>\ntotal = 0\nfor i in range(1, 11):\n    total += i\nprint('Sum:', total)\n</ORIGINAL_CODE>\n\n<BUGGY_CODE>\ntotal = 0\nfor i in range(1, 10):\n    total += i\nprint('Sum:', total)\n</BUGGY_CODE>\n\n<QUESTION>\nThis code should calculate the sum of numbers 1 to 10, but the result is 45 instead of 55. Why?\n</QUESTION>\n\n<OPTIONS>\n1. total should start at 1, not 0\n2. The range should be (1, 11) not (1, 10)\n3. There's a calculation error in the addition\n4. The loop should start at 0, not 1\n</OPTIONS>\n\n<ANSWER>\nAnswer: 2\n</ANSWER>\n\n<EXPLANATION>\nThe range(1, 10) includes numbers from 1 to 9, not including 10. To include 10, it should be range(1, 11) because the end value is exclusive in Python's range.\n</EXPLANATION>\n\n<DIFFICULTY>\nMedium\n</DIFFICULTY>\n\n<CATEGORY>\nLoops\n</CATEGORY>",
+      "role": "assistant"
+    }
+  ]
+]
