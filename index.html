@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Safari - Embark on Your Coding Adventure</title>
+  <link rel="stylesheet" href="styles_index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Safari Background -->
+  <div class="safari-bg"></div>
+  
+  <!-- Floating Elements (Fireflies) -->
+  <div class="floating-elements" id="fireflies"></div>
+  
+  <!-- Animated Animals -->
+
+  <div class="animated-animals">
+    <div class="animal-container bird">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bird">
+        <path d="M16 7h.01"></path>
+        <path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20"></path>
+        <path d="m20 7 2 .5-2 .5"></path>
+        <path d="M10 18v3"></path>
+        <path d="M14 17.75V21"></path>
+        <path d="M7 18a6 6 0 0 0 3.84-10.61"></path>
+      </svg>
+    </div>
+    <div class="animal-container monkey">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cat">
+        <path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z"></path>
+        <path d="M8 14v.5"></path>
+        <path d="M16 14v.5"></path>
+        <path d="M11.25 16.25h1.5L12 17l-.75-.75Z"></path>
+      </svg>
+    </div>
+    <div class="animal-container snake">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-snake">
+        <path d="M3 12h4l3-9 9 14h5"></path>
+        <path d="M14 12a2 2 0 0 0-2-2"></path>
+      </svg>
+    </div>
+  </div>
+  
+  <!-- User Role Selection Modal -->
+  <div class="role-selection-modal" id="role-selection">
+    <div class="role-selection-content">
+      <h2>Welcome to Code Safari!</h2>
+      <p>Are you a young explorer or a parent guide?</p>
+      <div class="role-options">
+        <div class="role-option" id="child-option">
+          <div class="role-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-baby">
+              <path d="M9 12h.01"></path>
+              <path d="M15 12h.01"></path>
+              <path d="M10 16c.5.3 1.5.5 2 .5s1.5-.2 2-.5"></path>
+              <path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"></path>
+            </svg>
+          </div>
+          <h3>I'm a Young Explorer</h3>
+          <p>Embark on a coding adventure!</p>
+        </div>
+        <div class="role-option" id="parent-option">
+          <div class="role-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>I'm a Parent</h3>
+          <p>Guide your child's learning journey</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code">
+        <polyline points="16 18 22 12 16 6"></polyline>
+        <polyline points="8 6 2 12 8 18"></polyline>
+      </svg>
+      <span>Code Safari</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#testimonials">Explorer Stories</a></li>
+        <li><a href="#cta">Get Started</a></li>
+        <li><a href="login.html" class="btn-small">Login</a></li>
+      </ul>
+      <div class="user-role-indicator" id="user-role-display">
+        <span class="role-badge" id="role-badge">Explorer</span>
+        <button class="switch-role-btn" id="switch-role-btn">Switch</button>
+      </div>
+      <button class="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+          <line x1="4" x2="20" y1="12" y2="12"></line>
+          <line x1="4" x2="20" y1="6" y2="6"></line>
+          <line x1="4" x2="20" y1="18" y2="18"></line>
+        </svg>
+      </button>
+    </nav>
+  </header>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#testimonials">Explorer Stories</a></li>
+      <li><a href="#cta">Get Started</a></li>
+      <li><a href="#" class="btn-mobile">Login</a></li>
+      <li class="mobile-role">
+        <span>Current Role: <span id="mobile-role-badge">Explorer</span></span>
+        <button class="switch-role-btn" id="mobile-switch-role-btn">Switch</button>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1 id="hero-title">Embark on Your Coding Safari!</h1>
+      <p id="hero-text">Join our AI-powered adventure where coding Python is as exciting as exploring the wild! Learn through play, track your progress, and become a coding champion.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn" id="cta-btn">Join the Adventure</a>
+        <a href="#" class="btn secondary" id="learn-more">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-image-container">
+      <img src="https://images.unsplash.com/photo-1511213966740-24d719a0a814?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" alt="Coding Safari Adventure" class="hero-image" id="hero-img">
+    </div>
+    <div class="mascot" id="mascot">
+      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lion">
+        <path d="M5.5 20.5 2 22l1.5-3.5L2 15l3.5 1.5L7 13l1.5 3.5L12 15l-1.5 3.5L12 22l-3.5-1.5L5.5 20.5Z"></path>
+        <path d="m14.5 20.5 3.5 1.5-1.5-3.5 1.5-3.5-3.5 1.5L12 13l-1.5 3.5L7 15l1.5 3.5L7 22l3.5-1.5 3.5 1.5Z"></path>
+        <path d="M12 8a3 3 0 0 0 0-6"></path>
+        <path d="M12 8a3 3 0 0 1 0-6"></path>
+        <path d="M12 8v8"></path>
+        <path d="M9 11h6"></path>
+      </svg>
+    </div>
+    <div class="jungle-vines">
+      <div class="vine vine-1"></div>
+      <div class="vine vine-2"></div>
+      <div class="vine vine-3"></div>
+    </div>
+  </section>
+  
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="section-header">
+      <h2 class="section-title">Discover the Safari</h2>
+      <p class="section-subtitle">Explore our jungle of coding features designed for young adventurers</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain-circuit">
+            <path d="M12 4.5a2.5 2.5 0 0 0-4.96-.46 2.5 2.5 0 0 0-1.98 3 2.5 2.5 0 0 0-1.32 4.24 3 3 0 0 0 .34 5.58 2.5 2.5 0 0 0 2.96 3.08 2.5 2.5 0 0 0 4.91.05L12 20V4.5Z"></path>
+            <path d="M16 8V5c0-1.1.9-2 2-2"></path>
+            <path d="M12 13h4"></path>
+            <path d="M12 18h6a2 2 0 0 1 2 2v1"></path>
+            <path d="M12 8h8"></path>
+            <path d="M20.5 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"></path>
+            <path d="M16.5 13a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"></path>
+            <path d="M20.5 21a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"></path>
+            <path d="M18.5 3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"></path>
+          </svg>
+        </div>
+        <h3>AI Tutor</h3>
+        <p>Your personal guide through the coding jungle, adapting to your learning style and pace to provide a tailored experience.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad-2">
+            <line x1="6" x2="10" y1="11" y2="11"></line>
+            <line x1="8" x2="8" y1="9" y2="13"></line>
+            <line x1="15" x2="15.01" y1="12" y2="12"></line>
+            <line x1="18" x2="18.01" y1="10" y2="10"></line>
+            <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.544-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.152A4 4 0 0 0 17.32 5z"></path>
+          </svg>
+        </div>
+        <h3>Game-Based Learning</h3>
+        <p>Solve coding challenges while embarking on exciting adventures, collecting rewards, and unlocking new territories.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-3">
+            <path d="M3 3v18h18"></path>
+            <path d="M18 17V9"></path>
+            <path d="M13 17V5"></path>
+            <path d="M8 17v-3"></path>
+          </svg>
+        </div>
+        <h3>Progress Tracking</h3>
+        <p>Watch your skills grow with detailed analytics and milestone achievements, tracking your journey through the coding wilderness.</p>
+      </div>
+      
+      <!-- <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h3>Parent Dashboard</h3>
+        <p>Parents can monitor learning progress, set goals, and receive detailed reports on skills development and achievements.</p>
+      </div> -->
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-accessibility">
+            <circle cx="16" cy="4" r="1"></circle>
+            <path d="m18 19 1-7-6 1"></path>
+            <path d="m5 8 3-3 5 1"></path>
+            <path d="M4.8 15.1a9 9 0 1 1 14.4 0"></path>
+          </svg>
+        </div>
+        <h3>Accessibility</h3>
+        <p>Our platform is designed for all explorers, with adaptive features ensuring every learner can join the coding adventure.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-medal">
+            <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path>
+            <path d="M11 12 5.12 2.2"></path>
+            <path d="m13 12 5.88-9.8"></path>
+            <path d="M8 7h8"></path>
+            <circle cx="12" cy="17" r="5"></circle>
+            <path d="M12 18v-2h-.5"></path>
+          </svg>
+        </div>
+        <h3>Achievements</h3>
+        <p>Earn badges, trophies, and unlock special rewards as you master new coding concepts and complete challenges.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-header">
+      <h2 class="section-title">Explorer Stories</h2>
+      <p class="section-subtitle">Hear from our young adventurers and their parents</p>
+    </div>
+    <div class="testimonial-container">
+      <div class="testimonial-slider" id="testimonial-slider">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p class="testimonial-text">"Code Safari transformed my 10-year-old from a complete beginner to confidently writing Python programs in just a few months. The gaming elements keep her coming back every day!"</p>
+            <div class="testimonial-author">Sarah Thompson</div>
+            <div class="testimonial-role">Parent of young coder</div>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p class="testimonial-text">"I love the jungle theme and all the cool animals! I've learned how to make my own games and even created a website. It's super fun!"</p>
+            <div class="testimonial-author">Max, 11 years old</div>
+            <div class="testimonial-role">Junior Explorer</div>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p class="testimonial-text">"As a teacher, I've seen how Code Safari engages students who previously showed no interest in coding. The gamification elements make learning feel like play."</p>
+            <div class="testimonial-author">Mr. Johnson</div>
+            <div class="testimonial-role">Elementary School Teacher</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-controls">
+        <button class="testimonial-btn prev" id="prev-testimonial">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left">
+            <path d="m15 18-6-6 6-6"></path>
+          </svg>
+        </button>
+        <div class="testimonial-dots" id="testimonial-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <button class="testimonial-btn next" id="next-testimonial">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
+            <path d="m9 18 6-6-6-6"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call to Action -->
+  <section class="cta" id="cta">
+    <div class="cta-content">
+      <h2>Ready to Start Your Coding Adventure?</h2>
+      <p>Join thousands of young explorers who are learning to code while having fun on our safari-themed platform.</p>
+      <a href="#" class="btn pulse">Start Your Free Trial</a>
+    </div>
+    <div class="jungle-animals">
+      <div class="animal monkey">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cat">
+          <path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z"></path>
+          <path d="M8 14v.5"></path>
+          <path d="M16 14v.5"></path>
+          <path d="M11.25 16.25h1.5L12 17l-.75-.75Z"></path>
+        </svg>
+      </div>
+      <div class="animal elephant">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-turtle">
+          <path d="m12 10 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a8 8 0 1 0-16 0v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3l2-4h4Z"></path>
+          <path d="M4.82 7.9 8 10"></path>
+          <path d="M15.18 7.9 12 10"></path>
+          <path d="M16.93 10H20a2 2 0 0 1 0 4H2"></path>
+        </svg>
+      </div>
+      <div class="animal giraffe">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rabbit">
+          <path d="M13 16a3 3 0 0 1-2.24-5"></path>
+          <path d="M18 14.5V11a2 2 0 0 0-2-2h-1.5"></path>
+          <path d="M13.75 8H10a.75.75 0 0 1-.75-.75v-2.5A.75.75 0 0 1 10 4h3.75a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-.75.75Z"></path>
+          <path d="M18 16.5V20a2 2 0 0 1-2 2h-2.5"></path>
+          <path d="M10 22a2 2 0 0 1-2-2v-3.5"></path>
+          <path d="M14 22h-4"></path>
+          <path d="M11 8v14"></path>
+          <path d="M6 12.5V10a2 2 0 0 1 2-2h1.5"></path>
+          <path d="M8 15.5V17a2 2 0 0 1-2 2H4"></path>
+          <path d="M6 12.5a2.5 2.5 0 0 0 0 5"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="leaves">
+      <div class="leaf leaf1"></div>
+      <div class="leaf leaf2"></div>
+      <div class="leaf leaf3"></div>
+      <div class="leaf leaf4"></div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Code Safari</h3>
+        <p>Making coding adventure accessible to all young explorers.</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+            </svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#testimonials">Explorer Stories</a></li>
+          <li><a href="#cta">Get Started</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Learning Paths</a></li>
+          <li><a href="#">Tutorial Library</a></li>
+          <li><a href="#">Coding Challenges</a></li>
+          <li><a href="#">Help Center</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Safety Guidelines</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      &copy; 2025 Code Safari. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script_index.js"></script>
+</body>
+</html>
