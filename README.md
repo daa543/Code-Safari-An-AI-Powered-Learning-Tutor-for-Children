@@ -1,4 +1,11 @@
 # Code-Safari-An-AI-Powered-Learning-Tutor-for-Children
+# Overview of the Website
+
+Our website is specially designed for kids aged 10 to 13 to learn Python programming in a simple, interactive, and fun way. In the website we have 6 features to help the user learn coding in python.
+
+1. Video Lessons + Auto PDF Notes
+Watch exciting video tutorials right on the website – and the website automatically turns the video lessons into easy-to-read PDF lecture notes just for you! Perfect for review and study.
+
 
 ## Project Structure
 * index.html - Main entry point of the application
