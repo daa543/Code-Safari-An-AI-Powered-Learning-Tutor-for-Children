@@ -95,3 +95,6 @@ Then, open your browser and navigate to:
 ```bash
 http://localhost:5500
 ```
+Here’s the result of the project:
+
+[Watch Video](https://drive.google.com/file/d/1rq8n1TRkAkZZA3frPuEfSGABwWKDRSE8/view?usp=sharing)
