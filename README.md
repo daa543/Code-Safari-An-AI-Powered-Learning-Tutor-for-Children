@@ -6,6 +6,20 @@ Our website is specially designed for kids aged 10 to 13 to learn Python program
 1. Video Lessons + Auto PDF Notes
 Watch exciting video tutorials right on the website – and the website automatically turns the video lessons into easy-to-read PDF lecture notes just for you! Perfect for review and study.
 
+2. AI Chatbot
+Our AI chatbot powered by RAG + Gemma 2B. It answers all the users coding questions using emojis 😊 and can even generate code to help the user solve tricky problems.
+
+3. AI Code Visualizer
+Using Gemini 1.5 Flash-powered visualizer shows the user a simple visual explanation so the user can understand how the code what code is in the easiest way possible.
+
+4. Generate MCQ Questions
+It generates multiple choice questions made by our smart AI using CodeT5-small model. The user gets a timer that keeps running as long as they get the answers right. If the user answers wrong, it stops generating questions and shows your score and you can try again.
+
+5. Debugging Detective Game
+Our website gives the user a code with hidden bugs or missing parts, and the user have to find the mistake. Powered by LLaMA 3.2 3B, this game helps to practice more in coding and there is also a Hint button for a clue the user can use it, if they don't know the answer.
+
+6. Generate Code Snippet
+It generates and give the user a coding task question with a starting code, and the user have to complete the code! We used CodeGen 350M model and it also checks the user code's logic and syntax to make sure that the user is answering the question correctly.
 
 ## Project Structure
 * index.html - Main entry point of the application
